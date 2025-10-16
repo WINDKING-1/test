@@ -14,3 +14,14 @@ jobs:
 
       - name: Run a test command
         run: echo "Hello, world! This is A CALL FOR HELP"
+        
+  test2:
+    runs-on: ubuntu-latest
+    needs: test 
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run second test command
+        run: echo "This is job test2 Also calling for help"
